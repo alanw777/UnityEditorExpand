@@ -2,17 +2,17 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DrawGizmos : MonoBehaviour
+public class DrawGizmosSelected : MonoBehaviour
 {
     public Color gizmosColor;
     public Vector3 wireCubeSize;
-    
-    //在game模式点击Gizmos也可以看到
-    public void OnDrawGizmos()
+  
+    //选中当前object时显示gizmos
+    public void OnDrawGizmosSelected()
     {
         Gizmos.color = gizmosColor;
         Gizmos.DrawWireCube(transform.position, wireCubeSize);
-        Gizmos.DrawSphere(transform.position, wireCubeSize.x/2);
+        Gizmos.DrawSphere(transform.position, wireCubeSize.x / 2);
     }
 
 
