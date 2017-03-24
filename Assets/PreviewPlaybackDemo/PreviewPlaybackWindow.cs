@@ -33,6 +33,7 @@ public class PreviewPlaybackWindow : EditorWindow
 
     void OnEnable()
     {
+        EditorApplication.update -= OnUpdate;
         EditorApplication.update += OnUpdate;
     }
 
