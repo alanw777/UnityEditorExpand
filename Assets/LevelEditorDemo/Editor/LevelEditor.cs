@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEditor;
+﻿using UnityEditor;
 using UnityEngine;
 //在鼠标位置，如果是有效范围则化预览框，点击菜单可以在该位置添加或者删除方块，按住shift可以多选。
 [InitializeOnLoad]
@@ -88,7 +86,6 @@ public class LevelEditor : Editor {
 
     private static void UpdateIsMouseInValidArea(Rect sceneViewRect)
     {
-        //todo
         bool isInValidArea = true;
 
         if (isInValidArea != IsMouseInValidArea)
@@ -108,11 +105,6 @@ public class LevelEditor : Editor {
             if (Physics.Raycast(ray, out hit, Mathf.Infinity) == true)
             {
                 Vector3 offset = Vector3.zero;
-
-//                if (EditorPrefs.GetBool("SelectBlockNextToMousePosition", true) == true)
-//                {
-//                    offset = hit.normal;
-//                }
 
                 CurrentHandlePosition.x = Mathf.Floor(hit.point.x - hit.normal.x * 0.001f + offset.x);
                 CurrentHandlePosition.y = Mathf.Floor(hit.point.y - hit.normal.y * 0.001f + offset.y);
